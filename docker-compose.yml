@@ -13,9 +13,20 @@ services:
       --NotebookApp.token=''
       --allow-root
       --notebook-dir=/workspace
-    expose:
-      - "8888"
     ports:
       - "8888:8888"
     volumes:
       - ./workspace:/workspace
+  mcserver:
+    image: itzg/minecraft-server
+    environment:
+      EULA: "TRUE"
+      ONLINE_MODE: "TRUE"
+      DIFFICULTY: "peaceful"
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    ports:
+      - "25565:25565"
+    volumes:
+      - ./mcserver-data:/data

@@ -32,5 +32,4 @@ RUN jupyter kernelspec list
 
 WORKDIR /workdir
 
-EXPOSE 8888
 CMD /bin/bash

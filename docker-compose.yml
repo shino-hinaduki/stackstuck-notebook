@@ -1,0 +1,21 @@
+version: "3"
+services:
+  notebook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    entrypoint: >
+      jupyter lab
+      --port=8888
+      --ip=*
+      --no-browser
+      --NotebookApp.token=''
+      --allow-root
+      --notebook-dir=/workspace
+    expose:
+      - "8888"
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./workspace:/workspace

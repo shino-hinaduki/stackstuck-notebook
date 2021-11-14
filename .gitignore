@@ -1,2 +1,5 @@
 # debug server datas
-mcserver-data/*
+mcserver-data
+
+# node install packages
+node_modules

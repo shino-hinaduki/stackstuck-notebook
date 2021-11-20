@@ -3,3 +3,6 @@ mcserver-data
 
 # node install packages
 node_modules
+
+# vscode setting
+.vscode

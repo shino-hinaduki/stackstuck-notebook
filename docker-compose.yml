@@ -4,7 +4,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    restart: always
     entrypoint: >
       sh -c "
         npm install && jupyter lab \
@@ -17,6 +16,7 @@ services:
       "
     ports:
       - "8888:8888"
+      - "8880:8880"
     volumes:
       - ./workspace:/workspace
     working_dir: "/workspace"
@@ -27,9 +27,6 @@ services:
       ONLINE_MODE: "FALSE"
       DIFFICULTY: "peaceful"
       OPS: "shino_hinaduki,stackstuck"
-    tty: true
-    stdin_open: true
-    restart: unless-stopped
     ports:
       - "25565:25565"
     volumes:

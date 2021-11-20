@@ -12,11 +12,11 @@ This is a trial-and-error notebook for Minecraft automation.
 Run JupyterLab
 
 ```sh
-$ ./run-mcserver.sh
+$ docker-compose up -d notebook
 ```
 
 Build a minecraft server.
 
 ```sh
-$ ./run-mcserver.sh
+$ docker-compose up -d mcserver
 ```
